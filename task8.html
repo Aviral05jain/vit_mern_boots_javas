@@ -1,0 +1,28 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Date and Time</title>
+</head>
+<body>
+    <button id="showDateButton">Show Date</button>
+    <div id="output1"></div>
+    <button id="showTimeButton">Show Time</button>
+    <div id="output2"></div>
+
+    <script>
+        document.getElementById("showDateButton").addEventListener("click", function () {
+            const currentDate = new Date();
+            const date = currentDate.toDateString();
+            document.getElementById("output1").textContent = "Current Date: " + date;
+        });
+
+        document.getElementById("showTimeButton").addEventListener("click", function () {
+            const currentTime = new Date();
+            const time = currentTime.toLocaleTimeString();
+            document.getElementById("output2").textContent = "Current Time: " + time;
+        });
+    </script>
+</body>
+</html>
