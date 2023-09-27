@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:linear-gradient(to bottom,rgb(249, 249, 110),rgb(245, 120, 141) );
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-right: 40px;
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="tel"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group textarea {
+            height: 80px;
+        }
+
+        .form-group label.radio {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #3366cc;
+        }
+
+        .error-message {
+            position: absolute;
+            top: 0;
+            right: -60px;
+            font-size: 12px;
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color: blue;">Registration Form</h1>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <span class="error-message" id="name-error"></span> <!-- Error message container -->
+            </div>
+
+            <div class="form-group">
+                    <label for="last name">Last name</label>
+                    <input type="text" id="lastname" placeholder="Enter Your last name">
+                    <span class="error-message" id="lastname-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <span class="error-message" id="lastname-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+                <span class="error-message" id="password-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="repassword">Re-enter Password</label>
+                <input type="password" id="password" placeholder="Re-Enter your password">
+                <span class="error-message" id="password-error"></span>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <label class="radio">
+                    <input type="radio" name="gender" value="male" checked> Male
+                </label>
+                <label class="radio">
+                    <input type="radio" name="gender" value="female"> Female
+                </label>
+                <label class="radio">
+                    <input type="radio" name="gender" value="other"> Other
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+                <span class="error-message" id="phone-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="about">Address</label>
+                <textarea id="about" placeholder="Write complete address"></textarea>
+                <span class="error-message" id="address-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="code">country code</label>
+                <select id="Country code">
+                    <option value="">Select your Code</option>
+                    <option value="India">+91</option>
+                    <option value="south sadan">20</option>
+                    <option value="franch">33</option>  ------------Select your country code--------------
+                    <!-- Add more language options as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="State">State</label>
+                <input type="text" id="zipcode" placeholder="Enter your state ">
+                <span class="error-message" id="zipcode-error"></span>
+            </div>
+            <div class="form-group">
+                <label>Language</label>
+                <label class="radio">
+                    <input type="checkbox" name="English" value="India" checked> English
+                </label>
+                <label class="radio">
+                    <input type="checkbox" name="Hindi" value="india"> Hindi
+                </label>
+                <label class="radio">
+                    <input type="checkbox" name="French" value="french"> French
+                </label>
+
+            </div>
+
+            <div>
+                <label class="information">
+                    <input type="checkbox" name="information" >
+                </label>
+                Hereby I declare all my information is true</div>
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Perform form submission and validation logic here
+            // You can access form values using document.getElementById('<element-id>').value
+            var name = document.getElementById('name').value;
+            var lastname = document.getElementById('lastname').value;
+            var email = document.getElementById('email').value;
+
+            if (name.trim() === '') {
+                document.getElementById('name-error').textContent = 'POOR';
+            } else {
+                document.getElementById('name-error').textContent = '';
+            }
+
+            if (lastname.trim() === '') {
+                document.getElementById('lastname-error').textContent = 'POOR';
+            } else {
+                document.getElementById('lastname-error').textContent = '';
+            }
+            if (email.trim() === '') {
+                document.getElementById('email-error').textContent = 'POOR';
+            } else {
+                document.getElementById('email-error').textContent = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
