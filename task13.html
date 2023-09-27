@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Train Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default body margin */
+            overflow: hidden; /* Hide horizontal scrollbar */
+        }
+    
+        .container {
+            text-align: center;
+        }
+    
+        img#train {
+            width: 200px;
+            position: absolute;
+            left: -200px; /* Position the train outside the left boundary */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img id="train" src="train.png" alt="Train">
+        <p id="message">Click on the buttons to handle animation</p>
+        <button id="startButton">Start</button>
+        <button id="stopButton">Stop</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

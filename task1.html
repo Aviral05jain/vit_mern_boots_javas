@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Layout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* Custom styles for header and containers */
+
+        .navbar{
+            padding: 10px;
+        }
+        .black-container {
+            background-color: #3a3a3a; /* Black background color */
+            color: #fff; /* White text color */
+            padding: 20px;
+            height: 100vh; /* 100% of viewport height */
+        }
+
+        .white-container {
+            background-color: #fff; /* White background color */
+            padding: 20px;
+            height: 100vh; /* 100% of viewport height */
+        }
+        .navbar-grey .navbar-nav .nav-link {
+            color: #fff; /* White text for navbar links */
+            margin:0 15px; /* Adjust the spacing between links */
+        }
+        .navbar-bottom {
+            background-color: #333; /* Grey navbar background */
+            color: #fff; /* White text in the navbar */
+            padding: 10px 0;
+        }
+
+        .navbar-menu {
+            margin-left: 20px; /* Add space from the left */
+        }
+
+        .navbar-menu a {
+            color: #fff; /* White text color for menu items */
+            margin-right: 20px; /* Add space between menu items */
+        }
+
+        .navbar-menu .btn {
+            margin-left: auto; /* Push "Sign Up" and "Login" to the right */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Header -->
+            <div class="col-12 text-center bg-info">
+                <h1>Ethnus Layout</h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-bottom">
+            <div class="container">
+                <div class="navbar-menu">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <button class="btn btn-outline-light">Sign Up</button>
+                <button class="btn btn-outline-light ml-2">Login</button>
+            </div>
+        </nav>
+        <div class="row">
+            <!-- Black Container (Narrow) -->
+            <div class="col-md-9 white-container">
+                <!-- Content for the black container -->
+                <p class="text-center">write the context here</p>
+            </div>
+            <!-- White Container (Large) -->
+            <div class="col-md-3 black-container">
+                <!-- Content for the white container -->
+                <p class="text-center" style="color:#fff" >This is</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Validation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    .custom-card{
+        background-color:rgba(216, 213, 213, 0.878) ;
+    }
+    .input-error{
+        border:2px solid red;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <form id="myForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name">
+                                <div class="small text-danger " id="name-error"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                                <div class="small text-danger" id="email-error"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                                <div class="small text-danger" id="password-error"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="hobbies" class="form-label">Hobbies</label>
+                                <select class="form-select" id="hobbies" name="hobbies">
+                                    <option value="">Select a Hobby</option>
+                                    <option value="reading">Reading</option>
+                                    <option value="sports">Sports</option>
+                                    <option value="music">Music</option>
+                                </select>
+                                <div class="small text-danger" id="hobbies-error"></div>
+                            </div>
+                            <div class="text-center d-grid">
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const hobbies = document.getElementById("hobbies");
+
+            const nameError = document.getElementById("name-error");
+            const emailError = document.getElementById("email-error");
+            const passwordError = document.getElementById("password-error");
+            const hobbiesError = document.getElementById("hobbies-error");
+
+            // Reset border color on submit
+            name.classList.remove("input-error");
+            email.classList.remove("input-error");
+            password.classList.remove("input-error");
+            hobbies.classList.remove("input-error");
+
+            if (name.value.trim() === "") {
+                nameError.textContent = "Name is required";
+                name.classList.add("input-error");
+                event.preventDefault();
+            } else {
+                nameError.textContent = "";
+            }
+
+            if (email.value.trim() === "") {
+                emailError.textContent = "Email is required";
+                email.classList.add("input-error");
+                event.preventDefault();
+            } else {
+                emailError.textContent = "";
+            }
+
+            if (password.value.trim() === "") {
+                passwordError.textContent = "Password is required";
+                password.classList.add("input-error");
+                event.preventDefault();
+            } else {
+                passwordError.textContent = "";
+            }
+
+            if (hobbies.value === "") {
+                hobbiesError.textContent = "Select a hobby";
+                hobbies.classList.add("input-error");
+                event.preventDefault();
+            } else {
+                hobbiesError.textContent = "";
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
